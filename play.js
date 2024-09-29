@@ -1,12 +1,3 @@
-const hello = {
-    first: 'hi',
-    second: 'bye',
-    third: 'sigh'
-}
-
-const getPosition = post => {
-    return(hello[post])
-}
-
-const thii = getPosition('first')
-console.log(thii)
+const hi = 9
+const bye = 9.7
+console.log(typeof(bye))

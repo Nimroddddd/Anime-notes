@@ -24,12 +24,15 @@ app.use(express.static("public"))
 app.get("/", async (req, res) => {
   const animeData = await checkAnimes()
   let data = []
-  animeData.forEach(anime => {
-    const result = new AnimeFormat(anime);
+  // animeData[1].forEach(anime => {
+  //   const result = new AnimeFormat(anime);
+  //   data.push(result)
+  // });
+  for (let i = 0; i < animeData[0].length; i ++) {
+    const result = new AnimeFormat (animeData[0][i], animeData[1][i])
     data.push(result)
-  });
+  }
   console.log(data)
-  // console.log(animeData[0].images.jpg.image_url)
   res.render("index.ejs", {data: data})
 })
 
@@ -46,8 +49,9 @@ async function checkAnimes () {
       const response = await axios.get("https://api.jikan.moe/v4/anime/" + anime.api_id)
       const result = response.data.data
       animeDetails.push(result)
+      setTimeout(() => {}, 500)
     };
-    return animeDetails
+    return [animeDetails, dbResult]
     } catch (err) {
       console.log(err.message)
     }
@@ -55,13 +59,16 @@ async function checkAnimes () {
 
 }
 
-function AnimeFormat (x) {
+function AnimeFormat (x, y) {
   this.image_url = x.images.jpg.image_url;
   this.url = x.url;
   this.score = x.score;
   this.studio = x.studios[0].name;
   this.status = x.status;
   this.title = x.titles[0].title;
+  this.review = y.review;
+  this.rating = y.rating;
+
 }
 
 
