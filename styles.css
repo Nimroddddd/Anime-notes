@@ -1,0 +1,70 @@
+html {
+  background-color: #106EBE;
+}
+
+h1, h2, p {
+  margin: 0;
+  padding: 0;
+	color: white
+}
+
+.top-container {
+  width: 80%;
+  margin: 60px 10%;
+  height: 100%;
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	gap: 100px;
+  width: 100%;
+  margin: 60px 0;
+  height: 100%;
+}
+
+
+h1 {
+  color: #0FFCBE;
+  margin-bottom: 30px;
+  font-size: 4rem;
+}
+
+.page-title {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.summary {
+  font-size: 20px;
+}
+
+img {
+	float: left;
+  margin-right: 60px;
+	/* margin-bottom: 30px; */
+	margin-top: 0;
+}
+
+.anime-title {
+  font-size: 30px;
+  color: #0FFCBE;
+}
+
+a {
+  color:#0FFCBE;
+}
+
+.rating {
+	font-size: 20px;
+	font-weight: lighter;
+}
+
+.review {
+	margin-top: 30px;
+	font-size: 21px;
+}
+
+.each-anime {
+	padding: 0;
+}
